@@ -46,21 +46,14 @@ int main(){
     }
   }
   else{
-    if(month <= 7){
-      if(month % 2 == 1){
-        cout << "31 days" << endl;
-      }
-      else{
-        cout << "30 days" << endl;
-      }
+    if(month > 7){
+      month = month % 7;
+    }
+    if(month % 2 == 1){
+      cout << "31 days" << endl;
     }
     else{
-      if(month % 2 == 0){
-        cout << "31 days" << endl;
-      }
-      else{
-        cout << "30 days" << endl;
-      }
+      cout << "30 days" << endl;
     }
   }
 }
