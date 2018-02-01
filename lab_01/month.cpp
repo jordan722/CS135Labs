@@ -39,10 +39,10 @@ int main(){
   cout << "\n";
   if (month == 2){
     if (isLeap(year) == "Leap year"){
-      cout << "28 days" << endl;
+      cout << "29 days" << endl;
     }
     else{
-      cout << "29 days" << endl;
+      cout << "28 days" << endl;
     }
   }
   else{
