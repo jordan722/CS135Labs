@@ -2,14 +2,12 @@
 Author: Jordan Yaqoob
 Course: CSCI-136
 Instructor: Zamansky
-Assignment: Lab_02 Task A
+Assignment: Lab_02 Task B
 
 This program will take an input from the user.
-if the input is between 0 and 100 exclusive, the
-program will return the square of the input. If
-the input is not between 0 and 100, the program
-will request the user to re-enter an input until
-a valid input is inputted
+The user puts in an upper and lower limit. The
+program then prints out all the numbers between
+the upper and lower limit.
 */
 
 
