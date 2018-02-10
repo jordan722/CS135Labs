@@ -20,7 +20,7 @@ int main(){
   cout << "Please enter an integer: ";
   int inp;
   cin >> inp;
-  while(cin.fail() || isalnum(inp) || inp <= 0 || inp >= 100){
+  while(cin.fail() || inp <= 0 || inp >= 100){
     cout << "Please re-enter: ";
     cin.clear();
     cin.ignore(256,'\n');
