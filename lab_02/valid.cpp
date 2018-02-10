@@ -12,8 +12,7 @@ will request the user to re-enter an input until
 a valid input is inputted
 */
 #include <iostream>
-#include <string>
-#include <locale>
+
 using namespace std;
 
 int main(){
