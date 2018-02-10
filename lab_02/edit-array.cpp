@@ -39,6 +39,6 @@ int main(){
       myData[index] = value;
     }
 
-  }while(index < 10);
+  }while(index < 10 && index >= 0);
   cout << "Index out of range. Exit." << endl;
 }
