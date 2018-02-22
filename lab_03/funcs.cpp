@@ -125,6 +125,7 @@ string reverse_order(string beg, string end){
   return ans;
 }
 
+/*
 int main(){
 
   cout << east_storage("07/22/2016") << endl;
@@ -134,3 +135,4 @@ int main(){
   cout << reverse_order("09/13/2016","09/17/2016") << endl;
   return 0;
 }
+*/
