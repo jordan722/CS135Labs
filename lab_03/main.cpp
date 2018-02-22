@@ -2,11 +2,7 @@
 
 #include "funcs.h"
 
-int main()
-{
-  std::cout << "This main is the real program\n";
-  std::cout << "hello world\n" ;
-
+int main(){
   cout << east_storage("07/22/2016") << endl;
   cout << mineast() << endl;
   cout << maxeast() << endl;
