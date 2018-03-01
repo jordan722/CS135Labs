@@ -58,3 +58,58 @@ string cross(int size){
   }
   return ans;
 }
+
+
+// Task D
+string lowerTri(int length){
+  string ans ="";
+  for(int i = 0; i < length; i++){
+    int j = 0;
+    while(j <= i){
+        ans += "*";
+        j++;
+    }
+    ans += "\n";
+  }
+  return ans;
+}
+
+
+// Task E
+string upperTri(int length){
+  string ans ="";
+  for(int i = 0; i < length; i++){
+    for(int j = 0; j < length; j++){
+      if(j >= i){
+        ans += "*";
+      }
+      else{
+        ans += " ";
+      }
+    }
+    ans += "\n";
+  }
+  return ans;
+}
+
+
+// Task F
+string trapezoid(int width, int height){
+  string ans ="";
+  if(width/2 < height){
+    return "Impossible shape!\n";
+  }
+  for(int i = 0; i < height; i++){
+    for(int j = 0; j < width; j++){
+      if(j >= i && j <= (width-1-i)){
+        ans += "*";
+      }
+      else{
+        ans += " ";
+      }
+    }
+    ans += "\n";
+  }
+  return ans;
+
+}
