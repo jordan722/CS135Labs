@@ -113,3 +113,21 @@ string trapezoid(int width, int height){
   return ans;
 
 }
+
+
+// Task G
+string checkerboard3(int width, int height){
+  string ans = "";
+  for(int i = 0; i < height; i++){
+    for(int j = 0; j < width; j++){
+      if((i/3)%2 == (j/3)%2){
+        ans += "*";
+      }
+      else{
+        ans += " ";
+      }
+    }
+    ans += "\n";
+  }
+  return ans;
+}
