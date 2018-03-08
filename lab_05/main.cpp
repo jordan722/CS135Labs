@@ -26,7 +26,7 @@ int main(){
 
   cout << countPrimes(2,17) << endl;
   cout << countPrimes(2,3) << endl;
-  cout << countPrimes(5,23) << endl;
+  cout << countPrimes(5,19) << endl;
   cout << "\n";
 
   cout << isTwinPrime(29) << endl;
