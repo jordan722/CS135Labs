@@ -1,0 +1,24 @@
+Jordan Yaqoob
+
+Part 1:
+i should be greater than capacity.
+i > CAPACITY
+
+Part 2:
+The min_val variable should be equal to arr[0], not 0.
+max_i should also be replaced with min_i.
+
+Part 3:
+CAPACITY should be replaced with CAPACITY - 1
+The if bracket is not properly closed
+
+
+Part 4:
+The error that was discovered was in the addUp function
+Instead of adding up the values of the array, the function was adding
+up the indices of each value.
+In line 87, i should be replaced with arr[i]
+
+
+Part 5:
+arr[i] should be replaced with just i
