@@ -1,17 +1,17 @@
 CXXFLAGS=-std=c++14
 
-main: main.o numbers.o
-				g++ -o main main.o numbers.o
+main: main.o ascii.o
+				g++ -o main main.o ascii.o
 
-tests: tests.o numbers.o
-				g++ -o tests tests.o numbers.o
+tests: tests.o ascii.o
+				g++ -o tests tests.o ascii.o
 
-tests.o: tests.cpp numbers.h
+tests.o: tests.cpp ascii.h
 
-main.o: main.cpp numbers.h
+main.o: main.cpp ascii.h
 				g++ $(CXXFLAGS) -c main.cpp
 
-numbers.o: numbers.cpp numbers.h
-				g++ $(CXXFLAGS) -c numbers.cpp
+ascii.o: ascii.cpp ascii.h
+				g++ $(CXXFLAGS) -c ascii.cpp
 clean:
-				rm -f main.o numbers.o
+				rm -f main.o ascii.o

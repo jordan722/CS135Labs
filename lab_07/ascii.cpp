@@ -10,10 +10,18 @@ void testascii(std::string s){
 char shiftChar(char c, int rshift){
 
   if(c >= 65 && c <= 90){
-    return 65 + ((int) c - 65 + rshift) % 26;
+    int shift = (int) c - 65 + rshift;
+    while(shift < 0){
+      shift += 26;
+    }
+    return 65 + shift % 26;
   }
   if(c >= 97 && c <= 122){
-    return 97 + ((int) c - 97 + rshift) % 26;
+    int shift = (int) c - 97 + rshift;
+    while(shift < 0){
+      shift += 26;
+    }
+    return 97 + shift % 26;
   }
   return c;
 }
@@ -57,11 +65,35 @@ string decryptCaesar(string ciphertext, int rshift){
   return ans;
 }
 
+string decryptVigenere(string ciphertext, string keyword){
+  string ans = "";
+  int loc = 0;
+  for(int i = 0; i < ciphertext.length(); i++){
+    char c = ciphertext[i];
+    if(isalpha(c)){
+      int rshift = (int)keyword[loc];
+      if(rshift < 90){
+        rshift = rshift - 65;
+      }
+      else{
+        rshift = rshift - 97;
+      }
+      loc = (loc + 1) % keyword.length();
+      ans += shiftChar(c, -rshift);
+    }
+    else{
+      ans += c;
+    }
+  }
+  return ans;
+}
+
 int main(){
   string s = "Cat :3 Dog";
   testascii(s);
   cout << shiftChar('b', 2) << endl;
   cout << encryptCaesar("Hello, World!", 10) << endl;
   cout << encryptVigenere("Hello, World!", "cake") << endl;
-  cout << decryptCaesar("Rovvy, Gybvn!", 10);
+  cout << decryptCaesar("Rovvy, Gybvn!", 10) << endl;
+  cout << decryptVigenere("Jevpq, Wyvnd!", "cake") << endl;
 }

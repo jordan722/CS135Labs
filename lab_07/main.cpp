@@ -2,12 +2,12 @@
 Author: Jordan Yaqoob
 Course: CSCI 136
 Instructor: Zamansky
-Assignment: Lab 3 - Pre-Lab
+Assignment: Lab 7
 */
 
 #include <iostream>
 using namespace std;
-#include "numbers.h"
+#include "ascii.h"
 
 int main(){
   cout << isDivisible(100,25) << endl;
