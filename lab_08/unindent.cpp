@@ -23,14 +23,3 @@ string removeLeadingSpaces(string line){
   }
   return ans;
 }
-
-
-int main(){
-  string line;
-  string ans = "";
-  while(getline(cin, line)){
-    ans += removeLeadingSpaces(line) + "\n";
-  }
-  cout << ans << endl;
-  return 0;
-}
