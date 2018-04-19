@@ -9,4 +9,4 @@ main.o: main.cpp lab-images.h
 lab-images.o: lab-images.cpp lab-images.h
 	g++ $(CXXFLAGS) -c lab-images.cpp
 clean:
-	rm -f main.o lab-images.o
+	rm -f main.o lab-images.o task-*

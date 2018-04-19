@@ -155,7 +155,7 @@ void scale(int image[MAX_H][MAX_W], int &h, int &w){
 			out[row*2+1][col*2+1] = image[row][col];
 		}
 	}
-	writeImage(out, h, w, "task-e.pgm");
+	writeImage(out, h*2, w*2, "task-e.pgm");
 }
 
 void pixelate(int image[MAX_H][MAX_W], int &h, int &w){
