@@ -2,7 +2,6 @@
 #include <math.h>
 #include "def.h"
 
-
 using namespace std;
 
 double length(Coord3D *p){
@@ -15,7 +14,9 @@ double length(Coord3D *p){
 }
 
 Coord3D * fartherFromOrigin(Coord3D *p1, Coord3D *p2){
-  if(length(p1) > length(p2)){
+  double distance_one = length(p1);
+  double distance_two = length(p2);
+  if (distance_one > distance_two){
     return p1;
   }
   else{
@@ -23,17 +24,52 @@ Coord3D * fartherFromOrigin(Coord3D *p1, Coord3D *p2){
   }
 }
 
-int main() {
-    //Coord3D pointP = {10, 20, 30};
-    //cout << length(&pointP) << endl; // would print 37.4166
+void move(Coord3D *ppos, Coord3D *pvel, double dt){
+  (*ppos).x += (*pvel).x * dt;
+  (*ppos).y += (*pvel).y * dt;
+  (*ppos).z += (*pvel).z * dt;
+}
 
-    Coord3D pointP = {10, 20, 30};
-    Coord3D pointQ = {-20, 21, -22};
+Coord3D* createCoord3D(double x, double y, double z){
+  Coord3D *ans = new Coord3D;
+  (*ans).x = x;
+  (*ans).y = y;
+  (*ans).z = z;
+  return ans;
+}
 
-    cout << "Address of P: " << &pointP << endl;
-    cout << "Address of Q: " << &pointQ << endl << endl;
+void deleteCoord3D(Coord3D *p){
+  delete p;
+}
 
-    Coord3D * ans = fartherFromOrigin(&pointP, &pointQ);
+Particle* createParticle(double x, double y, double z,double vx, double vy, double vz){
+  Particle *ans = new Particle;
+  (*ans).x = x;
+  (*ans).y = y;
+  (*ans).z = z;
+  (*ans).vx = vx;
+  (*ans).vy = vy;
+  (*ans).vz = vz;
+  return ans;
+}
 
-    cout << "ans = " << ans << endl; // So which point is farther?
+void setVelocity(Particle *p, double vx, double vy, double vz){
+  (*p).vx = vx;
+  (*p).vy = vy;
+  (*p).vz = vz;
+}
+
+Coord3D getPosition(Particle *p){
+  Coord3D ans = {(*p).x,(*p).y, (*p).z};
+  return ans;
+}
+
+void move(Particle *p, double dt){
+  (*p).x += (*p).vx * dt;
+  (*p).y += (*p).vy * dt;
+  (*p).z += (*p).vz * dt;
+}
+
+void deleteParticle(Particle *p){
+  delete p;
 }
