@@ -14,4 +14,4 @@ main.o: main.cpp functions.h
 functions.o: functions.cpp functions.h
 				g++ $(CXXFLAGS) -c functions.cpp
 clean:
-				rm -f main.o functions.o
+				rm -f main.o functions.o tests.o
