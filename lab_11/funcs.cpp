@@ -14,9 +14,9 @@ double length(Coord3D *p){
 }
 
 Coord3D * fartherFromOrigin(Coord3D *p1, Coord3D *p2){
-  double distance_one = length(p1);
-  double distance_two = length(p2);
-  if (distance_one > distance_two){
+  double dist1 = length(p1);
+  double dist2 = length(p2);
+  if (dist1> dist2){
     return p1;
   }
   else{
