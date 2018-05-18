@@ -49,3 +49,25 @@ bool nestedParens(string s){
   return nestedParens(s.substr(1, s.length()-2));
 
 }
+
+bool div_help(int *prices, int size, int a, int b){
+  if (size == 0){
+    return (a == b);
+  }
+  else if(div_help(prices, size - 1, a + prices[size-1], b)){
+    return true;
+
+  }
+  else if(div_help(prices, size - 1, a, b + prices[size-1])){
+    return true;
+  }
+  return false;
+}
+
+bool divisible(int *prices, int size){
+  int sum = sumArray(prices, size);
+  if (sum % 2 != 0){
+    return false;
+  }
+  return div_help(prices,size, 0, 0);
+}

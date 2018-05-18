@@ -42,4 +42,7 @@ int main(){
   cout << nestedParens("(()") << endl;         // false (0)
   cout << nestedParens(")(") << endl;          // false (0)
   cout << nestedParens("a(b)c") << endl;       // false (0)
+
+  int prices [] = {10, 15, 12, 18, 19, 17, 13, 35, 33};
+  cout << divisible(prices, 9) << endl;
 }
