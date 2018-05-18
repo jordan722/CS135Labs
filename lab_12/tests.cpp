@@ -6,49 +6,53 @@
 using namespace std;
 
 
-TEST_CASE("Length"){
-  cout << "Testing Length" << endl;
-  Coord3D pointA = {0, 0, 0};
-  CHECK(length(&pointA) == 0);
-  Coord3D pointB = {0, 0, 10};
-  CHECK(length(&pointB) == 10.0);
-  Coord3D pointC = {10, 20, 20};
-  CHECK(length(&pointC) == 30.0);
+TEST_CASE("sumRange"){
+  cout << "Testing sumRange" << endl;
+  CHECK(sumRange(3,5) == 12);
+  CHECK(sumRange(1,4) == 10);
+  CHECK(sumRange(-2,10) == 52);
+}
+
+TEST_CASE("sumArray"){
+  cout << "Testing sumArray" << endl;
+  int size = 10;
+  int *arr = new int[size]; // allocate array dynamically
+  arr[0] = 12;
+  arr[1] = 17;
+  arr[2] = -5;
+  arr[3] = 3;
+  arr[4] = 7;
+  arr[5] = -15;
+  arr[6] = 27;
+  arr[7] = 5;
+  arr[8] = 13;
+  arr[9] = -21;
+  CHECK(sumArray(arr, size) == 43);
+  CHECK(sumArray(arr,5) == 34);
+  CHECK(sumArray(arr, 3) == 24);
 }
 
 
-TEST_CASE("fartherFromOrigin"){
-  cout << "Testing fartherFromOrigin" << endl;
-  Coord3D pointA = {5, 3, 4};
-  Coord3D pointB = {20, -13, -12};
-  Coord3D * ans = fartherFromOrigin(&pointA, &pointB);
-  CHECK((*ans).x == pointB.x);
-  CHECK((*ans).y == pointB.y);
-  CHECK((*ans).z == pointB.z);
+TEST_CASE("isAlphanumeric"){
+  cout << "Testing isAlphanumeric" << endl;
+  CHECK(isAlphanumeric("ABCD") == true);
+  CHECK(isAlphanumeric("AB234jfsdfCD") == true);
+  CHECK(isAlphanumeric("sdvjfb2394423ndsjkf23") == true);
+  CHECK(isAlphanumeric("A sdk 23 4") == false);
+  CHECK(isAlphanumeric("sdf-dsf--dfs -df") == false);
 }
 
-
-TEST_CASE("move"){
-  cout << "Testing move" << endl;
-  Coord3D pos = {0, 0, 50.0};
-  Coord3D vel = {1, 5, -2};
-  move(&pos, &vel, 1.0); // struct pos gets changed
-  CHECK(pos.x == 1);
-  CHECK(pos.y == 5);
-  CHECK(pos.z == 48);
+TEST_CASE("nestedParens"){
+  cout << "Testing nestedParens" << endl;
+  CHECK(nestedParens("((()))") == true);
+  CHECK(nestedParens("") == true);
+  CHECK(nestedParens("(((") == false);
+  CHECK(nestedParens("a(b)c") == false);
 }
 
-
-TEST_CASE("Allocate Memory and Deleting objects"){
-  cout << "Testing Allocate Memory and Deleting objects" << endl;
-  double x = 0; double y = 10; double z = 20;
-  Coord3D *ppos = createCoord3D(x,y,z);
-  x = 3.2; y = -1.9; z = 3.42;
-  Coord3D *pvel = createCoord3D(x,y,z);
-  move(ppos, pvel, 5.0);
-  CHECK((*ppos).x == 16.0);
-  CHECK((*ppos).y == 0.5);
-  CHECK((int)(*ppos).z == 37);
-  deleteCoord3D(ppos); // release memory
-  deleteCoord3D(pvel);
+TEST_CASE("divisible"){
+  cout << "Testing divisible" << endl;
+  int prices [] = {10, 15, 12, 18, 19, 17, 13, 35, 33};
+  CHECK(divisible(prices, 9) == true);
+  CHECK(divisible(prices, 2) == false);
 }

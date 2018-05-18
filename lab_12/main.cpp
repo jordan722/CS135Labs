@@ -28,7 +28,7 @@ int main(){
   int sum2 = sumArray(arr, 5); // Add up first five elements
   cout << "Sum is " << sum2 << endl;  // Sum is 34
 
-  delete[] arr;         // deallocate it
+  delete[] arr;      m   // deallocate it
 
   cout << isAlphanumeric("ABCD") << endl;        // true (1)
   cout << isAlphanumeric("Abcd1234xyz") << endl; // true (1)
